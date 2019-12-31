@@ -1,0 +1,21 @@
+body {
+  padding-top: 5rem;
+  color: #949499;
+}
+
+h1, h2, h3, h4, button{
+  color: #d8d8d8;
+}
+.container {
+  height: 100%;
+  display: flex;
+  margin-left: 10vw;
+  margin-top: 30vh;
+}
+.intro {
+  border-left: 5px solid #4b2e83;
+  padding-left: 1.5rem;
+  text-align: center;
+  font-size: small;
+  text-align: left;
+}
