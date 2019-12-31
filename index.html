@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Phuong's Website</title>
@@ -16,6 +16,7 @@
      </style>
      <!-- custom styles -->
      <link href="./css/index.css" rel="stylesheet">
+     <link href="./css/home.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
@@ -29,7 +30,7 @@
                     <a class="nav-link" href="//codeply.com">About Me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Porfolio</a>
+                    <a class="nav-link" href="./html/porfolio.html">Porfolio</a>
                 </li>
             </ul>
         </div>
@@ -48,22 +49,14 @@
         </div>
       </nav>
   
-      <main role="main" class="container">
-        <div class="intro">
-          <h6>Hello, my name is</h6>
-          <h1>Phuong D. Tran</h1>
-          <p class="lead">I am a senior in Computer Science at University of Washington.</p>
-          <button type="button" class="btn btn-outline-dark" onclick="openResume()">Download Resume</button>
-        </div>
+      <main role="main" class="container" id="root">
+       <script>
+           $("#root").load("./html/home.html #home");
+        </script>
       </main><!-- /.container -->
   
     <!-- Optional JavaScript -->
-    <script>
-        function openResume(){
-            window.open (
-            "https://drive.google.com/a/uw.edu/file/d/1pvyt6xi351JOE1u6cr7PgH-ozQK6w0fJ/view?usp=drivesdk", "_blank");
-        }
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
