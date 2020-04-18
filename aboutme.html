@@ -22,6 +22,7 @@
     <!-- custom styles -->
     <link href="./css/index.css" rel="stylesheet">
     <link href="./css/aboutme.css" rel="stylesheet">
+    <link href="./css/footer.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
         <div class="navbar-collapse justify-content-center order-2">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="./home.html">Home</a>
+                    <a class="nav-link" href="./index.html">Home</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="./aboutme.html">About Me</a>
@@ -42,11 +43,15 @@
         <div class="navbar-collapse collapse justify-content-center order-2">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/PhuongDTran"><img src="./img/github.png"
+                    <a class="nav-link" href="https://github.com/PhuongDTran" target="_blank"><img src="./img/github.png"
                             width="20px" height="20px"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www.linkedin.com/in/fuongtran/"><img src="./img/linkedin.png"
+                    <a class="nav-link" href="https://www.linkedin.com/in/fuongtran/" target="_blank"><img src="./img/linkedin.png"
+                            width="20px" height="20px"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://stackoverflow.com/users/9512497/fuong" target="_blank"><img src="./img/stackoverflow.png"
                             width="20px" height="20px"></a>
                 </li>
             </ul>
@@ -55,13 +60,24 @@
 
     <main role="main" class="container" id="root">
         <div id="aboutme">
-            <p class="lead">Phuong Tran is passnate about growing his technical skills</p>
+            <p class="lead">
+                Phuong Tran is passnate about growing his technical skills
+            </p>
+            <p class="lead">
+                If you wish to communicate sensitive or proprietary information with me, via my email account fuongdtran@gmail.com,
+                please make use of an appropriate standards-based encryption package.
+                My current choice is: PGP available for purchase at www.pgp.com. Other products that support public key cryptography and DH/DSS keys should work, too.
+            </p>
+            <p class="lead">
+                You must first import my public key into your encryption package's keyring.  My key can be downloaded <a href="./public/phuongtran.asc">here</a><br/>
+                or by searching for "fuongdtran@gmail.com" on the <a href="https://keys.openpgp.org/" target="_blank">OpenPGP Key server.</a>
+            </p>
         </div>
     </main>
 
-    <footer class="footer mt-auto">
+    <footer class="footer">
         <div class="container justify-content-center">
-            <p> Modified January 5, 2020</p>
+            <p> Modified April 18, 2020</p>
         </div>
     </footer>
 </body>
