@@ -19,16 +19,17 @@
             background: black !important;
             margin-bottom: 40px;
         }
+
         nav {
             background: black !important;
         }
+
         footer {
             background: black !important;
         }
     </style>
     <!-- custom styles -->
     <link href="./css/index.css" rel="stylesheet">
-    <link href="./css/footer.css" rel="stylesheet">
 </head>
 
 <body>
@@ -66,42 +67,86 @@
 
     <main role="main" class="container" id="root">
         <div>
-            <p>
-                I put my deployed projects on this page
-                <h3><a href="http://www.phuongtran.me/drawing/" target="_blank" rel="noopener noreferrer"> <br><u>Simple
-                    Drawing Tool</u></a> </h3>
+            <p>I put my deployed projects on this page</p>
+            <div style="position: relative; margin-right: 200px;">
+                <p>
+                    <h3><a href="http://www.phuongtran.me/drawing/" target="_blank" rel="noopener noreferrer"> <br><u>Simple
+                        Drawing Tool</u></a> </h3>
+                        <img src="./img/drawing.png" width="600px" heigh="300px" style="margin-left: 20%;" />
                 <h4>Use cases:</h4>
-                During my last quarters as a senior at University of Washington in Seattle, Washington, I had difficult
-                time to explain class materials over the phone with a friend since she can't visualize what I had in my head.
-                Therefore, I created this app that allow users interact on the same drawing canvas in real time.<br><br>
+                This app that allow users interact on the same drawing canvas in real time.<br><br>
                 <h4>How it works:</h4>
                 A user (host) can let other users draw on his/her canvas by clicking on "Share your canvas" button.
-                This action would generate a random code. I did not store any generated codes, so I can't check the
-                uniqueness of them, and therefore, there is a chance that the code is being used by someone else.
-                However, this probability is small since the length of a code is 6 digits.
-                Other users (guests) enter the code into their "Room #" textbox and click on "Join canvas by entering a room code" button.
-                A room code acts like a channel in Socket.IO which is introduced below. <br>
+                This action would generate a random code. Other users (guests) enter the code into their "Room #"
+                textbox and click on "Join canvas by entering a room code" button.<br>
 
-                I picked <a href="https://socket.io" target="_blank" rel="noopener noreferrer">Socket.IO</a> to act like a middleman
-                on server side to deliver messages between users. Socket.IO uses publish/subscribe pattern, please
-                go to this <a href= "https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern#:~:text=In%20software%20architecture%2C%20publish%E2%80%93subscribe,if%20any%2C%20there%20may%20be." target="_blank" rel="noopener noreferrer"> wiki </a>
-                page to understand how this pattern works. When the host finished drawing a line, a message containing info about that line as well as
-                the room code created by the host sent to server. At server, Socket.IO uses the room code as a channel and forwards the message to guests via
-                that channel. Any guests who subcribe to that channel will receive the message. As a result, the line is drawn on guests' canvas.
+                When the host finished drawing a segment, a message, containing segment info and generated room code,
+                sent to server. At server,
+                <a href="https://socket.io" target="_blank" rel="noopener noreferrer">Socket.IO</a>, using
+                publish/subscribe pattern,
+                is responsible for forwarding the message to guests via a channel defined by the room code received from
+                the host.
+                Any guests who subcribe to that channel will receive the message sent by Socket.IO. As a result, the
+                segment is drawn on guests' canvas.
                 Similarly, if a guest made any drawings, these would also be displayed on the host's canvas.<br>
-                A segment drawn on canvas is not straight line. It connects all of straight lines. To reduce the number of straight lines,
-                <a href="http://paperjs.org/" target="_blank" rel="noopener noreferrer">paperjs</a> is in use to smooth the segment.<br><br>
-                <h4>Future Functionality:</h4>
-                <u><b>Room code Validation:</b></u> when a user entered a room code and click on "Join canvas by entering a room code" button, an alert would show up. Currently, this alert is meaningless. In the future,
-                This alert will tell the user whether a code is valid. The code is valid if and only if there is at least one other user using the code.
-            </p>
-            <p>
-                <h3><a href="http://www.phuongtran.me/stock/" target="_blank" rel="noopener noreferrer"> <br><u>Stock Performance</u></a> </h3>
-            </p>
+                Notice, a segment drawn on canvas is not straight line. It is a combination of all straight lines. To
+                reduce the number of straight lines,
+                <a href="http://paperjs.org/" target="_blank" rel="noopener noreferrer">paperjs</a> handles smoothing
+                the segment.<br><br>
+                <h4>Future Improvements:</h4>
+                <u><b>Room code Validation:</b></u> when a user entered a room code and click on "Join canvas by
+                entering a room code" button, an alert would show up. Currently, this alert is meaningless. In the
+                future,
+                This alert will tell the user whether a code is valid. The code is valid if and only if there is at
+                least one other user using the code.
+                </p>
+            </div>
+            <div style="position: relative; margin-left: 200px;">
+                <p>
+                <h3><a href="http://www.phuongtran.me/stock/" target="_blank" rel="noopener noreferrer"> <br><u>Stock
+                            Performance</u></a> </h3>
+                <img src="./img/stock.png" width="600px" heigh="300px" style="margin-left: 20%;"/>
+                <h4>Use cases:</h4>
+                This tool helps stock investors comparing re always want to figure out what stock is likely gain the
+                most in a list of selected stocks.<br><br>
+                <h4>How it works:</h4>
+                User enters a budget, start date, end date, and a valid stock symbol, then clicks on "Update" to send
+                all of these data to server. At server side, it looks for the
+                symbol in database.
+                <ul>
+                    <li>
+                        If there is no stock data of that symbol exists in the database, a request sent to a financial
+                        service, Alpha Vantage, to get all of available historical
+                        stock data (20+ years of data), and cache it in the database.
+                    </li>
+                    <li>
+                        If the database already has some data belonging to the symbol, depending on how latest data is,
+                        a request to Alpha Vantage may not be needed or only need
+                        latest 100 data points from Alpha Vantage.
+                    </li>
+                </ul>
+                After client side getting data from server side, the data is plotted with <a
+                    href="https://recharts.org/en-US/" target="_blank" rel="noopener noreferrer">Rechart</a><br>
+                To make things simple, this app accepts partial shares, and dividends will be reinvested.<br><br>
+                <h4>Future Improvements:</h4>
+                <u><b>User input:</b></u> in the future, all user inputs like budget, stock symbols will be stored so
+                that the user won't type in these info again after logged in.<br>
+                <u><b>Caching data:</b></u> right now, if a stock symbol has not asked by any users before, it takes a
+                long time to do all of the work like getting data from Alpha Vantage,
+                storing it in database, and returning it to the user. In the future, the waiting time will be
+                reduced.<br><br>
+                <h4>Attentions:</h4>
+                Alpha Vantage limits the number of API calls per minute and per day, and also this app is not in a good
+                shape yet. Please close the brownser tab and try again after a few
+                minutes if there is any error.<br>
+                To save your waiting time, you can use some stock symbols that already have data in database like
+                MSFT, AMZN, AAPL, TLSA.
+                </p>
+            </div>
         </div>
     </main>
 
-    <footer class="navbar fixed-bottom" style="background-color: black;">
+    <footer class="navbar fixed-bottom" style="background-color: black; border-top: 1px solid #4b2e83">
         <div class="container justify-content-center" style="margin: auto; height: 40px;">
             <p> Modified July 14, 2020</p>
         </div>
