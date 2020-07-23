@@ -1,6 +1,54 @@
-.home {
+$purple: #4b2e83;
+.intro {
   margin-top: 30vh;
+  text-align: left;
 }
-.home h1 {
-  color: #4b2e83
+
+.intro h1 {
+  width: 300px;
+  color: $purple;
+  text-align: left;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 2px solid #F4F6F7; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0; /* Gives that scrolling effect as the typing happens */
+  // letter-spacing: .1em; /* Adjust as needed */
+  animation:
+    typing 3.0s steps(40, end) 1s 1 normal both,
+    blink-caret .75s step-end infinite;
 }
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #F4F6F7; }
+}
+
+/* skills area */
+.skills {
+  margin-top: 10rem;
+}
+
+$progressHeight: 5px;
+.progress {
+  height: $progressHeight;
+  background-color: #4c4c4c;
+}
+
+.progress-bar {
+  height: $progressHeight;
+  background-color: $purple;
+  animation: animated-progress 3s ease;
+}
+
+@keyframes animated-progress {
+  0% { width: 0; }
+  100% { width: 40%; }
+}
+
