@@ -1,7 +1,7 @@
 import React from 'react';
-import '../css/Porfolio.css';
+import '../scss/Porfolio.scss';
 
-function Porfolio() {
+function Portfolio() {
   return (
     <div className="porfolio">
       <p>I put my deployed projects on this page</p>
@@ -89,4 +89,4 @@ function Porfolio() {
     </div>
   );
 }
-export default Porfolio;
+export default Portfolio;

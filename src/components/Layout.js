@@ -8,7 +8,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
 import AboutMe from './AboutMe';
-import Porfolio from './Porfolio';
+import Porfolio from './Portfolio';
 
 function Layout() {
 

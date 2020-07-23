@@ -4,7 +4,9 @@ nav {
 .navbar-nav li a {
   color: #F4F6F7 !important;
 }
+$iconSize : 20px;
+
 .navbar img {
-  width: 20px;
-  height: 20px;
+  width: $iconSize;
+  height: $iconSize;
 }

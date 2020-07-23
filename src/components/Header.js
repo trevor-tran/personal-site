@@ -1,5 +1,7 @@
 import React from 'react';
-import "../css/Header.css"
+// import "../css/Header.css"
+import '../scss/Header.scss';
+
 function Header() {
   return (
     <nav className="navbar navbar-expand-md navbar-dark fixed-top">
@@ -12,7 +14,7 @@ function Header() {
             <a className="nav-link" href="/aboutme/">About Me</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/porfolio/">Porfolio</a>
+            <a className="nav-link" href="/porfolio/">Portfolio</a>
           </li>
         </ul>
       </div>
