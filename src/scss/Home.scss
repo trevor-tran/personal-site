@@ -14,14 +14,14 @@ $purple: #4b2e83;
   margin: 0; /* Gives that scrolling effect as the typing happens */
   // letter-spacing: .1em; /* Adjust as needed */
   animation:
-    typing 3.0s steps(40, end) 1s 1 normal both,
+    typing 3.0s steps(30, end) 1s 1 normal both,
     blink-caret .75s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 100% }
+  to { width: calc(#{width}); }
 }
 
 /* The typewriter cursor effect */
@@ -44,11 +44,17 @@ $progressHeight: 5px;
 .progress-bar {
   height: $progressHeight;
   background-color: $purple;
-  animation: animated-progress 3s ease;
+  animation: animated-progress 3s ease-out;
 }
 
 @keyframes animated-progress {
-  0% { width: 0; }
-  100% { width: 40%; }
+  from { width: 0; }
+  to { width: calc(#{width}); }
 }
 
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px;
+}
