@@ -14,28 +14,14 @@
   flex-direction: row;
   text-align: center; }
   .message-location .message {
-    margin: auto 1% auto 1%;
+    margin: auto 0.5% auto 0.5%;
     width: 50%;
     height: 100%;
     border: 1px solid white;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
     background-color: white; }
-    .message-location .message .message-input {
-      height: 16rem; }
-    .message-location .message .send-button {
-      width: 90%;
-      background-color: #4b2e83;
-      border: none; }
-    .message-location .message .form-control {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      border: none;
-      border-bottom: 1px solid #4c4c4c;
-      border-radius: unset; }
   .message-location .location {
-    margin: auto 1% auto 1%;
+    margin: auto 0.5% auto 0.5%;
     width: 50%;
     height: 100%;
     border: 1px solid white;

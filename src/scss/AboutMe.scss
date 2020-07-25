@@ -1,5 +1,5 @@
-@mixin half-width {
-  margin: auto 1% auto 1%;
+@mixin each-container {
+  margin: auto 0.5% auto 0.5%;
   width: 50%;
   height: 100%;
   border: 1px solid white;
@@ -23,34 +23,13 @@
   text-align: center;
 
   .message {
-    @include half-width;
-    display: flex;
-    flex-direction: column;
+    @include each-container;
     background-color: white;
-
-
-    .message-input {
-      height: 16rem;
-    }
-
-    .send-button {
-      width: 90%;
-      background-color: #4b2e83;
-      border: none;
-    }
-
-    .form-control {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      border: none;
-      border-bottom: 1px solid #4c4c4c;
-      border-radius: unset;
-    }
   }
 
   .location {
 
-    @include half-width;
+    @include each-container;
 
   }
 }
