@@ -15,14 +15,14 @@ $progressHeight: 5px;
     margin: 0; /* Gives that scrolling effect as the typing happens */
     // letter-spacing: .1em; /* Adjust as needed */
     animation:
-    yping 3.0s steps(30, end) 1s 1 normal both,
+    typing 3.0s steps(30, end) 1s 1 normal both,
     blink-caret .75s step-end infinite;
   }
 
   /* The typing effect */
   @keyframes typing {
     from { width: 0 }
-    to { width: calc(#{width})}
+    to { width: calc(#{width}); }
   }
 
   /* The typewriter cursor effect */
@@ -51,7 +51,7 @@ $progressHeight: 5px;
 
 @keyframes animated-progress {
   from { width: 0; }
-  to { width: calc(#{width})}
+  to { width: calc(#{width}); }
 }
 
 table {
