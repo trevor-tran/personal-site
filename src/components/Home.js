@@ -1,5 +1,6 @@
 import React from 'react';
-import '../scss/Home.scss'
+import '../css/Home.css';
+
 function Home() {
   const handleClick = () => {
     window.open("Phuong-Tran-Resume.pdf", "_blank");
