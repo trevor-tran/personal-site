@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/AboutMe.css';
-
+import MapContainer from './MapContainer';
 
 function AboutMe() {
   return (
@@ -13,7 +13,7 @@ function AboutMe() {
           My current choice is: PGP available for purchase at www.pgp.com. Other products that support public key cryptography and DH/DSS keys should work, too.
         </p>
         <p className="lead">
-          You must first import my public key into your encryption package's keyring.  My key can be downloaded <a href="phuongtran.asc">here</a><br />
+          You must first import my public key into your encryption package's keyring.  My key can be downloaded <a href="phuongtran.asc">here </a>
           or by searching for "fuongdtran@gmail.com" on the <a href="https://keys.openpgp.org/" target="_blank" rel="noopener noreferrer">OpenPGP Key server.</a>
         </p>
       </div>
@@ -43,7 +43,7 @@ function AboutMe() {
           </form>
         </div>
         <div className="location">
-
+          <MapContainer/>
         </div>
       </div>
     </React.Fragment>

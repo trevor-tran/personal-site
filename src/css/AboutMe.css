@@ -17,11 +17,11 @@
     margin: auto 1% auto 1%;
     width: 50%;
     height: 100%;
+    border: 1px solid white;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border: 1px solid white;
-    border-radius: 5px; }
+    background-color: white; }
     .message-location .message .message-input {
       height: 16rem; }
     .message-location .message .send-button {
@@ -38,4 +38,5 @@
     margin: auto 1% auto 1%;
     width: 50%;
     height: 100%;
-    background-color: white; }
+    border: 1px solid white;
+    border-radius: 5px; }
