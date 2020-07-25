@@ -19,19 +19,23 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: white;
     border: 1px solid white;
     border-radius: 5px; }
     .message-location .message .message-input {
-      height: 17.8rem; }
+      height: 16rem; }
     .message-location .message .send-button {
       width: 90%;
       background-color: #4b2e83;
       border: none; }
     .message-location .message .form-control {
+      margin-top: 5px;
+      margin-bottom: 5px;
       border: none;
-      border-bottom: 1px solid black; }
+      border-bottom: 1px solid #4c4c4c;
+      border-radius: unset; }
   .message-location .location {
-    border: 1px solid red;
     margin: auto 1% auto 1%;
     width: 50%;
-    height: 100%; }
+    height: 100%;
+    background-color: white; }

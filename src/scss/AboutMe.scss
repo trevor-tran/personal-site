@@ -1,3 +1,9 @@
+@mixin half-width {
+  margin: auto 1% auto 1%;
+  width: 50%;
+  height: 100%;
+
+}
 .aboutme {
   margin-top: 30vh;
   border-left: 5px solid #4b2e83;
@@ -5,4 +11,47 @@
   text-align: center;
   font-size: small;
   text-align: left;
+}
+
+.message-location {
+  margin-top: 10rem;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+
+  .message {
+    @include half-width;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+
+    .message-input {
+      height: 16rem;
+    }
+
+    .send-button {
+      width: 90%;
+      background-color: #4b2e83;
+      border: none;
+    }
+
+    .form-control {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border: none;
+      border-bottom: 1px solid #4c4c4c;
+      border-radius: unset;
+    }
+  }
+
+  .location {
+
+    @include half-width;
+    background-color: white;
+
+  }
 }
