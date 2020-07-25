@@ -1,9 +1,9 @@
 import React from 'react';
-import '../css/Porfolio.css';
+import '../css/Portfolio.css';
 
 function Portfolio() {
   return (
-    <div className="porfolio">
+    <div className="portfolio">
       <p>I put my deployed projects on this page</p>
       <div className="drawing-tool">
         <h3><a href="http://www.phuongtran.me/drawing/" target="_blank" rel="noopener noreferrer"><u>Simple
@@ -19,7 +19,7 @@ function Portfolio() {
 
         When the host finished drawing a segment, a message, containing segment info and generated room code,
         sent to server. At server,
-        <a href="https://socket.io" target="_blank" rel="noopener noreferrer">Socket.IO</a>, using
+        <a href="https://socket.io" target="_blank" rel="noopener noreferrer"> Socket.IO</a>, using
         publish/subscribe pattern,
         is responsible for forwarding the message to guests via a channel defined by the room code received from
         the host.
@@ -28,7 +28,7 @@ function Portfolio() {
         Similarly, if a guest made any drawings, these would also be displayed on the host's canvas.<br />
         Notice, a segment drawn on canvas is not straight line. It is a combination of all straight lines. To
         reduce the number of straight lines,
-        <a href="http://paperjs.org/" target="_blank" rel="noopener noreferrer">paperjs</a> handles smoothing
+        <a href="http://paperjs.org/" target="_blank" rel="noopener noreferrer"> paperjs</a> handles smoothing
         the segment.<br />
         </p>
         <h4>Future Improvements:</h4>
