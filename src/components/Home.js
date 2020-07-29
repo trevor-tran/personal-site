@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import $ from 'jquery';
 import '../css/Home.css';
 
 function Home() {
@@ -7,12 +8,22 @@ function Home() {
   }
 
   const SKILLS = [
-    { skill: "Java", proficency: "60%" },
-    { skill: "JavaScript", proficency: "60%" },
-    { skill: "ReactJS", proficency: "80%" },
-    { skill: "HTML/CSS", proficency: "60%" },
-    { skill: "SQL", proficency: "60%" }
+    { id: "java", skill: "Java", proficency: "60%" },
+    { id: "javascript", skill: "JavaScript", proficency: "60%" },
+    { id: "reactjs", skill: "ReactJS", proficency: "80%" },
+    { id: "html", skill: "HTML/CSS", proficency: "60%" },
+    { id: "sql", skill: "SQL", proficency: "60%" }
   ];
+
+
+  // this useEffect() called once after the page mounted
+  useEffect(() => {
+    SKILLS.forEach(s => {
+      $("#" + s.id).animate({
+        width: s.proficency
+      }, { duration: 1500 });
+    })
+  }, []);
 
   // "skills" is a list of objects following the format below:
   // [{skill: "React", proficency: "50%"},{skill: "Java", proficency: "60%"}]
@@ -29,15 +40,15 @@ function Home() {
         elementPerRow = 0;
       }
       row.push(
-        <td key={s.skill}>
+        <td key={s.id}>
           <h6>{s.skill}</h6>
           <div className="progress">
-            <div className="progress-bar"
+            <div id={s.id} className="progress-bar"
               role="progressbar"
               aria-valuenow={s.proficency}
               aria-valuemin="0"
               aria-valuemax="100"
-              style={{ width: s.proficency }}
+              style={{ width: "0%" }}
             />
           </div>
         </td>

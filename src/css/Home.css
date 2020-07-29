@@ -39,14 +39,7 @@
 
 .progress-bar {
   height: 5px;
-  background-color: #4b2e83;
-  animation: animated-progress 3s ease-out; }
-
-@keyframes animated-progress {
-  from {
-    width: 0; }
-  to {
-    width: calc(width); } }
+  background-color: #4b2e83; }
 
 table {
   table-layout: fixed;

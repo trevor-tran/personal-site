@@ -46,13 +46,13 @@ $progressHeight: 5px;
 .progress-bar {
   height: $progressHeight;
   background-color: $purple;
-  animation: animated-progress 3s ease-out;
+  // animation: animated-progress 3s ease-out;
 }
 
-@keyframes animated-progress {
-  from { width: 0; }
-  to { width: calc(#{width}); }
-}
+// @keyframes animated-progress {
+//   from { width: 0; }
+//   to { width: calc(#{width}); }
+// }
 
 table {
   table-layout: fixed;
