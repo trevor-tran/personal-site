@@ -46,6 +46,9 @@ $progressHeight: 5px;
 .progress-bar {
   height: $progressHeight;
   background-color: $purple;
+  // https://stackoverflow.com/questions/23575095/animating-bootstrap-progress-bar-width-with-jquery
+  -webkit-transition: none !important;
+  transition: none !important;
   // animation: animated-progress 3s ease-out;
 }
 

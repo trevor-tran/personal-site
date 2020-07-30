@@ -21,7 +21,7 @@ function Home() {
     SKILLS.forEach(s => {
       $("#" + s.id).animate({
         width: s.proficency
-      }, { duration: 1500 });
+      }, { duration: 4000 });
     })
   }, []);
 
