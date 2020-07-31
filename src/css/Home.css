@@ -27,11 +27,13 @@
   from, to {
     border-color: transparent; }
   50% {
-    border-color: #F4F6F7; } }
+    border-color: inherit; } }
 
 /* skills area */
 .skills {
   margin-top: 10rem; }
+  .skills h2 {
+    color: inherit; }
 
 .progress {
   height: 5px;
