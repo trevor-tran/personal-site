@@ -1,5 +1,4 @@
 @mixin each-container {
-  margin: auto 0.5% auto 0.5%;
   width: 50%;
   height: 100%;
   border: 1px solid white;
@@ -17,22 +16,29 @@
   }
 }
 
-.message-location {
+.contact-container {
   margin-top: 10rem;
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+.message-map-container {
+  margin-top: 1rem;
   height: 400px;
   display: flex;
   flex-direction: row;
-  text-align: center;
+  justify-content: space-between;
 
-  .message {
+  .message-container {
     @include each-container;
     background-color: white;
+    margin-right: 0.5%;
   }
 
-  .location {
+  .map-container{
 
     @include each-container;
-
+    margin-left: 0.5%;
   }
 }

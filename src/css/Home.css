@@ -21,7 +21,7 @@
   from {
     width: 0; }
   to {
-    width: calc(width); } }
+    width: calc(290px); } }
 
 @keyframes blink-caret {
   from, to {
