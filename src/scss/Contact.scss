@@ -1,5 +1,5 @@
 $purple: #4b2e83;
-$movingPixel: -2px;
+$movingPixel: -5px;
 .contact {
   display: flex;
   flex-direction: column;
@@ -10,13 +10,14 @@ $movingPixel: -2px;
   height: 200px;
   color: $purple;
   transition: top ease 0.5s;
-
+  margin: 0px !important;
   &:hover {
     -webkit-transform: translateY($movingPixel);
     -moz-transform: translateY($movingPixel);
     -ms-transform: translateY($movingPixel);
     -o-transform: translateY($movingPixel);
     transform: translateY($movingPixel);
+    transition: 0.8s;
   }
   h2 {
     color: $purple;

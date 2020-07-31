@@ -7,13 +7,15 @@
   width: 360px;
   height: 200px;
   color: #4b2e83;
-  transition: top ease 0.5s; }
+  transition: top ease 0.5s;
+  margin: 0px !important; }
   .contact:hover {
-    -webkit-transform: translateY(-2px);
-    -moz-transform: translateY(-2px);
-    -ms-transform: translateY(-2px);
-    -o-transform: translateY(-2px);
-    transform: translateY(-2px); }
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    transform: translateY(-5px);
+    transition: 0.8s; }
   .contact h2 {
     color: #4b2e83; }
   .contact .image-container {
