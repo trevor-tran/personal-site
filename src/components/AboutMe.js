@@ -25,10 +25,10 @@ function AboutMe() {
         <Contact image={process.env.PUBLIC_URL + "/mail.png"} title="Email Address" content="fuongdtran@gmail.com"/>
       </div>
       <div className="message-map-container">
-        <div className="message-container">
+        <div className="message-container shadow p-3 mb-5 bg-white rounded">
           <MessageBox/>
         </div>
-        <div className="map-container">
+        <div className="map-container shadow p-3 mb-5 bg-white rounded">
           <MapContainer/>
         </div>
       </div>

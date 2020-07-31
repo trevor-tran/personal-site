@@ -1,8 +1,6 @@
 $purple: #4b2e83;
+$movingPixel: -2px;
 .contact {
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -11,7 +9,15 @@ $purple: #4b2e83;
   width: 360px;
   height: 200px;
   color: $purple;
+  transition: top ease 0.5s;
 
+  &:hover {
+    -webkit-transform: translateY($movingPixel);
+    -moz-transform: translateY($movingPixel);
+    -ms-transform: translateY($movingPixel);
+    -o-transform: translateY($movingPixel);
+    transform: translateY($movingPixel);
+  }
   h2 {
     color: $purple;
   }
