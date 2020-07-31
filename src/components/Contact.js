@@ -3,7 +3,7 @@ import '../css/Contact.css'
 function Contact({image, title, content, width, height}) {
   return (
     <div className="contact" style={{width, height}} >
-      <div>
+      <div className="image-container">
        <img src={image} alt=""/>
       </div>
       <div>

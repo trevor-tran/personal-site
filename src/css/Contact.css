@@ -12,8 +12,15 @@
   color: #4b2e83; }
   .contact h2 {
     color: #4b2e83; }
-  .contact img {
+  .contact .image-container {
+    display: flex;
+    flex-direction: column;
     border-radius: 50%;
-    width: 90px;
+    width: 80px;
     height: 80px;
-    background-color: #4b2e83; }
+    background-color: #4b2e83;
+    justify-content: center;
+    align-items: center; }
+  .contact img {
+    width: 40px;
+    height: 40px; }
