@@ -1,0 +1,12 @@
+nav {
+  background: black !important;
+}
+.navbar-nav li a {
+  color: #F4F6F7 !important;
+}
+$iconSize : 20px;
+
+.navbar img {
+  width: $iconSize;
+  height: $iconSize;
+}

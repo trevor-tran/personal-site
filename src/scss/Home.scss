@@ -1,0 +1,69 @@
+$purple: #4b2e83;
+$progressHeight: 5px;
+
+.intro {
+  margin-top: 30vh;
+  text-align: left;
+
+  h1 {
+    width: 300px;
+    color: $purple;
+    text-align: left;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 2px solid #F4F6F7; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0; /* Gives that scrolling effect as the typing happens */
+    // letter-spacing: .1em; /* Adjust as needed */
+    animation:
+    typing 3.0s steps(30, end) 1s 1 normal both,
+    blink-caret .75s step-end infinite;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: calc(290px); }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: inherit; }
+  }
+}
+
+
+/* skills area */
+.skills {
+  margin-top: 10rem;
+
+  h2 {
+  color: inherit;
+  }
+}
+
+.progress {
+  height: $progressHeight;
+  background-color: #4c4c4c;
+}
+
+.progress-bar {
+  height: $progressHeight;
+  background-color: $purple;
+  // https://stackoverflow.com/questions/23575095/animating-bootstrap-progress-bar-width-with-jquery
+  -webkit-transition: none !important;
+  transition: none !important;
+  // animation: animated-progress 3s ease-out;
+}
+
+// @keyframes animated-progress {
+//   from { width: 0; }
+//   to { width: calc(#{width}); }
+// }
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px;
+}

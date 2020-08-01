@@ -1,0 +1,40 @@
+$purple: #4b2e83;
+$movingPixel: -5px;
+.contact {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 360px;
+  height: 200px;
+  color: $purple;
+  transition: top ease 0.5s;
+  margin: 0px !important;
+  &:hover {
+    -webkit-transform: translateY($movingPixel);
+    -moz-transform: translateY($movingPixel);
+    -ms-transform: translateY($movingPixel);
+    -o-transform: translateY($movingPixel);
+    transform: translateY($movingPixel);
+    transition: 0.8s;
+  }
+  h2 {
+    color: $purple;
+  }
+  .image-container{
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #4b2e83;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,32 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 360px;
+  height: 200px;
+  color: #4b2e83;
+  transition: top ease 0.5s;
+  margin: 0px !important; }
+  .contact:hover {
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    transform: translateY(-5px);
+    transition: 0.8s; }
+  .contact h2 {
+    color: #4b2e83; }
+  .contact .image-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #4b2e83;
+    justify-content: center;
+    align-items: center; }
+  .contact img {
+    width: 40px;
+    height: 40px; }
