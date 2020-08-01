@@ -8,7 +8,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
 import AboutMe from './AboutMe';
-import Porfolio from './Portfolio';
+import Portfolio from './Portfolio';
 
 function Layout() {
 
@@ -18,7 +18,7 @@ function Layout() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/aboutme/" component={AboutMe} />
-          <Route exact path="/porfolio/" component={Porfolio} />
+          <Route exact path="/portfolio/" component={Portfolio} />
           <Route path="*" render={()=> <Redirect to="/"/>} />
         </Switch>
         <Footer/>
