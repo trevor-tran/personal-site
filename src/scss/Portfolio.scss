@@ -1,4 +1,5 @@
 
+$space: 10vw;
 .portfolio {
   margin-top: 10vh;
   h1, h2, h3, h4, h5, h6, a{
@@ -7,16 +8,16 @@
 }
 .drawing-tool {
   position: relative;
-  margin-right: 200px;
+  margin-right: $space;
 }
 
 .stock-performance {
   position: relative;
-  margin-left: 200px;
+  margin-left: $space;
 }
 
 .demo {
-  width: 600px;
-  height: 300px;
+  width: 50%;
+  height: 30%;
   margin-left: 20%;
 }

@@ -5,13 +5,13 @@
 
 .drawing-tool {
   position: relative;
-  margin-right: 200px; }
+  margin-right: 10vw; }
 
 .stock-performance {
   position: relative;
-  margin-left: 200px; }
+  margin-left: 10vw; }
 
 .demo {
-  width: 600px;
-  height: 300px;
+  width: 50%;
+  height: 30%;
   margin-left: 20%; }
