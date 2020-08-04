@@ -5,6 +5,33 @@ import MessageBox from './MessageBox';
 import Contact from './Contact';
 
 function AboutMe() {
+
+  const contactInfo = [
+    {
+      image: process.env.PUBLIC_URL + "/location.png",
+      title: "My Location",
+      content: "Renton, WA 98055"
+    },
+    {
+      image: process.env.PUBLIC_URL + "/phone.png",
+      title: "Phone Number",
+      content: "+1(206) 898-7083",
+    },
+    {
+      image: process.env.PUBLIC_URL + "/phone.png",
+      title: "Phone Number",
+      content: "+1(206) 898-7083",
+      image: process.env.PUBLIC_URL + "/mail.png",
+      title: "Email Address",
+      content: "fuongdtran@gmail.com"
+    }
+  ];
+
+  const makeContact = (contactInfo) => {
+    return contactInfo.map(e =>
+        <Contact image={e.image} title={e.title} content={e.content}/>
+    );
+  }
   return (
     <React.Fragment>
       <div className="aboutme">
@@ -20,9 +47,7 @@ function AboutMe() {
         </p>
       </div>
       <div className="contact-container">
-        <Contact image={process.env.PUBLIC_URL + "/location.png"} title="My Location" content="Renton, WA 98055"/>
-        <Contact image={process.env.PUBLIC_URL + "/phone.png"} title="Phone Number" content="+1(206) 898-7083"/>
-        <Contact image={process.env.PUBLIC_URL + "/mail.png"} title="Email Address" content="fuongdtran@gmail.com"/>
+        {makeContact(contactInfo)}
       </div>
       <div className="message-map-container">
         <div className="message-container shadow p-3 mb-5 bg-white rounded">
