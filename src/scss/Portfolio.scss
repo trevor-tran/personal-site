@@ -1,9 +1,11 @@
+@import './standard';
 
 $space: 10vw;
+
 .portfolio {
   margin-top: 10vh;
   h1, h2, h3, h4, h5, h6, a{
-    color: #4b2e83;
+    color: $purple;
   }
 }
 .drawing-tool {

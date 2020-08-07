@@ -1,0 +1,9 @@
+@import "./standard";
+footer {
+  background-color: $backgroundColor;
+  border-top: 1px solid $purple;
+  div {
+    margin: auto;
+    height: $footerHeight;
+  }
+}

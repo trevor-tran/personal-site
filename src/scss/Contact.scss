@@ -1,5 +1,9 @@
-$purple: #4b2e83;
-$movingPixel: -5px;
+@import "./standard";
+
+$offsetY: -5px;
+$bigImg: 80px;
+$smallImg: 40px;
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -7,16 +11,15 @@ $movingPixel: -5px;
   align-items: center;
   justify-content: center;
   width: 33%;
-  // height: 20%;
   color: $purple;
   transition: top ease 0.5s;
   margin: 0px !important;
   &:hover {
-    -webkit-transform: translateY($movingPixel);
-    -moz-transform: translateY($movingPixel);
-    -ms-transform: translateY($movingPixel);
-    -o-transform: translateY($movingPixel);
-    transform: translateY($movingPixel);
+    -webkit-transform: translateY($offsetY);
+    -moz-transform: translateY($offsetY);
+    -ms-transform: translateY($offsetY);
+    -o-transform: translateY($offsetY);
+    transform: translateY($offsetY);
     transition: 0.8s;
   }
   h2 {
@@ -26,15 +29,15 @@ $movingPixel: -5px;
     display: flex;
     flex-direction: column;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    background-color: #4b2e83;
+    width: $bigImg;
+    height: $bigImg;
+    background-color: $purple;
     justify-content: center;
     align-items: center;
   }
 
   img {
-    width: 40px;
-    height: 40px;
+    width: $smallImg;
+    height: $smallImg;
   }
 }

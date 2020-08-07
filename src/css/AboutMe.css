@@ -23,13 +23,13 @@
   .message-map-container .message-container {
     width: 50%;
     height: 100%;
-    border: 1px solid white;
+    border: 1px solid #F4F6F7;
     border-radius: 5px;
-    background-color: white;
+    background-color: #F4F6F7;
     margin-right: 0.5%; }
   .message-map-container .map-container {
     width: 50%;
     height: 100%;
-    border: 1px solid white;
+    border: 1px solid #F4F6F7;
     border-radius: 5px;
     margin-left: 0.5%; }
