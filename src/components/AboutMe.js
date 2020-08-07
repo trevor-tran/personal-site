@@ -26,7 +26,7 @@ function AboutMe() {
 
   const makeContact = (contactInfo) => {
     return contactInfo.map(e =>
-        <Contact image={e.image} title={e.title} content={e.content}/>
+        <Contact key={e.title} image={e.image} title={e.title} content={e.content}/>
     );
   }
   return (
