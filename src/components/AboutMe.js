@@ -18,9 +18,6 @@ function AboutMe() {
       content: "+1(206) 898-7083",
     },
     {
-      image: process.env.PUBLIC_URL + "/phone.png",
-      title: "Phone Number",
-      content: "+1(206) 898-7083",
       image: process.env.PUBLIC_URL + "/mail.png",
       title: "Email Address",
       content: "fuongdtran@gmail.com"
