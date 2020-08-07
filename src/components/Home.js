@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react';
 import $ from 'jquery';
 import '../css/Home.css';
+import { useMediaQuery } from 'react-responsive';
 
 function Home() {
+
+  const isBigScreen = useMediaQuery({ minWidth: 1224 });
+
+
   const handleClick = () => {
     window.open("Phuong-Tran-Resume.pdf", "_blank");
   }
@@ -12,7 +17,7 @@ function Home() {
     { id: "javascript", skill: "JavaScript", proficency: "60%" },
     { id: "reactjs", skill: "ReactJS", proficency: "80%" },
     { id: "html", skill: "HTML/CSS", proficency: "60%" },
-    { id: "sql", skill: "SQL", proficency: "60%" }
+    { id: "sql", skill: "SQL", proficency: "60%" },
   ];
 
 
@@ -23,24 +28,23 @@ function Home() {
         width: s.proficency
       }, { duration: 4000 });
     })
-  }, []);
+  }, [isBigScreen]);
 
   // "skills" is a list of objects following the format below:
   // [{skill: "React", proficency: "50%"},{skill: "Java", proficency: "60%"}]
-  const makeSkillList = (skills) => {
-    const COLS = 2;
+  const makeSkillList = (skills, cols) => {
     let lst = [];
     let row = [];
     let elementPerRow = 0;
     skills.forEach((s, i) => {
-      if (elementPerRow === COLS) {
+      if (elementPerRow === Number(cols)) {
         lst.push(<tr key={i}>{row}</tr>);
         //reset
         row = [];
         elementPerRow = 0;
       }
       row.push(
-        <td key={s.id}>
+        <td key={s.id + cols}>
           <h6>{s.skill}</h6>
           <div className="progress">
             <div id={s.id} className="progress-bar"
@@ -73,7 +77,7 @@ function Home() {
         <h2>Technical skills</h2>
         <table>
           <tbody>
-            {makeSkillList(SKILLS)}
+            {isBigScreen ? makeSkillList(SKILLS, 2) : makeSkillList(SKILLS, 1)}
           </tbody>
         </table>
       </div>
