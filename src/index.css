@@ -9,7 +9,7 @@ body {
   color: #F4F6F7;
   height: 100%;
   margin: auto 20vw 100px 20vw;
-  min-width: 50rem;
+  min-width: 50vw;
 }
 
 h1, h2, h3, h4, button{
@@ -19,4 +19,11 @@ h1, h2, h3, h4, button{
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media only screen and (max-width: 1224px) {
+  body {
+    margin: 2vw;
+    margin-bottom: 100px;
+  }
 }
