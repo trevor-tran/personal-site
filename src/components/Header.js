@@ -17,9 +17,10 @@ function Header() {
   }
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark fixed-top">
+    <nav className="navbar navbar-expand navbar-dark fixed-top">
+      {/* big screen */}
       <MediaQuery minWidth={1224}>
-        <div className="navbar-collapse justify-content-center order-2">
+        <div className="left-container navbar-collapse justify-content-start order-1">
           <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link" href="/">Home</a>
@@ -33,24 +34,23 @@ function Header() {
           </ul>
         </div>
       </MediaQuery>
+      {/* small screen */}
       <MediaQuery maxWidth={1224}>
-        <div className="sidenav-container">
-          <div id="sidenav-id" className="sidenav">
-            <button className="closebtn" onClick={closeSideNav}>&times;</button>
-              <a href="/">Home</a>
-              <a href="/aboutme/">About Me</a>
-              <a  href="/portfolio/">Portfolio</a>
-          </div>
-          <nav className="navbar navbar-dark">
-            <button className="navbar-toggler" type="button">
-              <span className="navbar-toggler-icon" onClick={openSideNav}></span>
-            </button>
-          </nav>
+      <div className="sidenav-container left-container navbar-collapse justify-content-start order-1">
+        <nav className="navbar">
+            <span className="navbar-toggler-icon" onClick={openSideNav}></span>
+        </nav>
+        <div id="sidenav-id" className="left-container sidenav" >
+          <button className="closebtn" onClick={closeSideNav}>&times;</button>
+          <a href="/">Home</a>
+          <a href="/aboutme/">About Me</a>
+          <a href="/portfolio/">Portfolio</a>
         </div>
+      </div>
       </MediaQuery>
 
       {/* icons on the right */}
-      {/* <div className="navbar-collapse justify-content-center order-2">
+      <div className="right-container navbar-collapse justify-content-end order-2">
         <ul className="navbar-nav">
           <li className="nav-item">
             <a className="nav-link" href="https://github.com/PhuongDTran" target="_blank" rel="noopener noreferrer">
@@ -68,7 +68,7 @@ function Header() {
             </a>
           </li>
         </ul>
-      </div> */}
+      </div>
     </nav>
   );
 }
