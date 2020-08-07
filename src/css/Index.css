@@ -6,8 +6,7 @@ body {
   background-color: #000000 !important;
   color: #F4F6F7;
   height: 100%;
-  margin: auto 20vw calc(40px + 60px) 20vw;
-  min-width: 50vw; }
+  margin: auto 20vw calc(40px + 60px) 20vw; }
 
 h1, h2, h3, h4, button {
   color: #F4F6F7; }
@@ -18,4 +17,7 @@ code {
 @media only screen and (max-width: 1224px) {
   body {
     margin: 2vw;
-    margin-bottom: calc(40px + 60px); } }
+    margin-bottom: calc(40px + 60px);
+    font-size: medium !important; }
+  .lead {
+    font-size: medium !important; } }

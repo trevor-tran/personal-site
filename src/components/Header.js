@@ -3,6 +3,7 @@ import $ from 'jquery';
 import MediaQuery from 'react-responsive';
 
 import '../css/Header.css';
+import {BIG_SCREEN} from '../utils';
 
 function Header() {
 
@@ -20,7 +21,7 @@ function Header() {
       image: process.env.PUBLIC_URL + "/stackoverflow.png"
     }
   ];
-  
+
   const openSideNav = () => {
     console.log("opened")
     $("#sidenav-id").width("200px");
@@ -45,7 +46,7 @@ function Header() {
   return (
     <nav className="navbar navbar-expand navbar-dark fixed-top">
       {/* big screen */}
-      <MediaQuery minWidth={1224}>
+      <MediaQuery minWidth={BIG_SCREEN}>
         <div className="left-container navbar-collapse justify-content-start order-1">
           <ul className="navbar-nav">
             <li className="nav-item">
@@ -61,7 +62,7 @@ function Header() {
         </div>
       </MediaQuery>
       {/* small screen */}
-      <MediaQuery maxWidth={1224}>
+      <MediaQuery maxWidth={BIG_SCREEN}>
         <div className="sidenav-container left-container navbar-collapse justify-content-start order-1">
           <nav className="navbar">
             <span className="navbar-toggler-icon" onClick={openSideNav}></span>

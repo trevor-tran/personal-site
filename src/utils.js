@@ -1,0 +1,1 @@
+export const BIG_SCREEN = 1224;

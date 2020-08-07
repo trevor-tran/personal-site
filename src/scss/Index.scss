@@ -13,7 +13,6 @@ body {
   color: $white;
   height: 100%;
   margin: auto $bigSideMargin calc(#{$footerHeight} + #{$spaceFromFooter}) $bigSideMargin;
-  min-width: 50vw;
 }
 
 h1, h2, h3, h4, button{
@@ -25,9 +24,18 @@ code {
     monospace;
 }
 
-@media only screen and (max-width: 1224px) {
+@mixin smallTextSize {
+  font-size: medium !important;
+}
+
+@media only screen and (max-width: $bigScreen) {
   body {
     margin: $smallSideMargin;
     margin-bottom: calc(#{$footerHeight} + #{$spaceFromFooter});
+    @include smallTextSize;
   }
+  &.lead {
+    @include smallTextSize;
+  }
+
 }

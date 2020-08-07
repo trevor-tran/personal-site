@@ -1,6 +1,6 @@
 @import './standard';
 
-$space: 10vw;
+$additionalMargin: 10vw;
 
 .portfolio {
   margin-top: 10vh;
@@ -10,16 +10,31 @@ $space: 10vw;
 }
 .drawing-tool {
   position: relative;
-  margin-right: $space;
+  margin-right: $additionalMargin;
 }
 
 .stock-performance {
   position: relative;
-  margin-left: $space;
+  margin-left: $additionalMargin;
 }
 
 .demo {
   width: 50%;
   height: 30%;
   margin-left: 20%;
+}
+
+@mixin smallSideMargins {
+  margin-left: $smallSideMargin;
+  margin-right: $smallSideMargin;
+}
+
+@media only screen and (max-width: $bigScreen) {
+  .drawing-tool {
+    @include smallSideMargins;
+  }
+
+  .stock-performance {
+    @include smallSideMargins;
+  }
 }

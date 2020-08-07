@@ -1,8 +1,9 @@
 @import "./standard";
 
 $offsetY: -5px;
-$bigImg: 80px;
-$smallImg: 40px;
+$big: 80px;
+$medium: 40px;
+$small: 20px;
 
 .contact {
   display: flex;
@@ -13,7 +14,7 @@ $smallImg: 40px;
   width: 33%;
   color: $purple;
   transition: top ease 0.5s;
-  margin: 0px !important;
+  margin: 0px;
   &:hover {
     -webkit-transform: translateY($offsetY);
     -moz-transform: translateY($offsetY);
@@ -29,15 +30,36 @@ $smallImg: 40px;
     display: flex;
     flex-direction: column;
     border-radius: 50%;
-    width: $bigImg;
-    height: $bigImg;
+    width: $big;
+    height: $big;
     background-color: $purple;
     justify-content: center;
     align-items: center;
   }
 
   img {
-    width: $smallImg;
-    height: $smallImg;
+    width: $medium;
+    height: $medium;
   }
+}
+
+
+@media only screen and (max-width: $bigScreen) {
+  .contact {
+    width: 80%;
+    margin-top: 2%;
+    h2 {
+      font-size: large;
+    }
+    img {
+      width: $small;
+      height: $small;
+    }
+
+    .image-container {
+      width: $medium;
+      height: $medium;
+    }
+  }
+
 }

@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import $ from 'jquery';
 import '../css/Home.css';
 import { useMediaQuery } from 'react-responsive';
+import {BIG_SCREEN} from '../utils';
 
 function Home() {
 
-  const isBigScreen = useMediaQuery({ minWidth: 1224 });
+  const isBigScreen = useMediaQuery({ minWidth: BIG_SCREEN });
 
 
   const handleClick = () => {
@@ -70,7 +71,7 @@ function Home() {
       <div className="intro">
         <h6>Hello, my name is</h6>
         <h1 style={{ width: "290px" }}><b>Phuong D. Tran</b></h1>
-        <p className="lead">I am a new grad in Computer Science at University of Washington, Seattle, Washington.</p>
+        <p className="lead">I am a new grad in Computer Science at University of Washington, Seattle, Washington, USA.</p>
         <button type="button" className="btn btn-outline-dark" onClick={handleClick}>View my resume</button>
       </div>
       <div className="skills">

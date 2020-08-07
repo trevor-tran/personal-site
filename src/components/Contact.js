@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Contact.css'
 function Contact({image, title, content, width, height}) {
   return (
-    <div className="contact shadow p-3 mb-5 bg-white rounded" style={{width, height}} >
+    <div className="contact shadow p-3 bg-white rounded" style={{width, height}} >
       <div className="image-container">
        <img src={image} alt=""/>
       </div>

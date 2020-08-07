@@ -1,19 +1,16 @@
 @import './standard';
 
 .message-box {
-  display: flex;
-  flex-direction: column;
 
   .send-button {
-    width: 90%;
     background-color: $purple;
     border: none;
-    margin: auto;
-
+    width: 100%;
+    margin-top: 10px;
   }
 
-  .message {
-    flex: 1;
+  .message-input {
+    height: 100%;
   }
 
   .form-control {
@@ -22,5 +19,11 @@
     border: none;
     border-bottom: 1px solid #4c4c4c;
     border-radius: unset;
+  }
+}
+
+@media only screen and (max-width: $bigScreen) {
+  .form-control{
+    font-size: medium;
   }
 }

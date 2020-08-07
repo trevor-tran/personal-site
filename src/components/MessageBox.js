@@ -34,7 +34,7 @@ function MessageBox() {
   }
 
   return (
-    <form className="message-box" onSubmit={sendEmail}>
+    <form className="message-box d-flex h-100 flex-column" onSubmit={sendEmail}>
       <div className="row">
         <div className="col">
           <input type="text" className="form-control shadow-none" name="user_name" placeholder="Name" onChange={handleChange} />
@@ -48,12 +48,12 @@ function MessageBox() {
           <input type="text" className="form-control shadow-none" name="subject" placeholder="Subject" onChange={handleChange} />
         </div>
       </div>
-      <div className="row message">
-        <div className="col message">
-          <textarea type="text" className="form-control shadow-none" name="message" placeholder="Message" onChange={handleChange} />
+      <div className="row flex-fill">
+        <div className="col">
+          <textarea type="text" className="form-control shadow-none message-input" name="message" placeholder="Message" onChange={handleChange} />
         </div>
       </div>
-      <button type="submit" className="btn btn-primary mb-2 send-button shadow-none">Send Message</button>
+      <button type="submit" className="btn btn-primary shadow-none send-button">Send Message</button>
     </form>
   );
 }
