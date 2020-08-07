@@ -7,3 +7,41 @@ nav {
 .navbar img {
   width: 20px;
   height: 20px; }
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  box-shadow: 10px 1px 10px #0c0c0c; }
+
+.sidenav a, button {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+  transition: 0.3s; }
+
+.sidenav button {
+  background-color: inherit;
+  padding: 0;
+  border: none; }
+
+.sidenav-container button {
+  outline: none; }
+
+.sidenav a:hover, button:hover {
+  color: #F4F6F7; }
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px; }
