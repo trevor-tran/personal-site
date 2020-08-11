@@ -93,7 +93,7 @@ function Home() {
 
   const displayLogos = (logos) => {
     return logos.map(e =>
-      <img className="m-2" width="50px" height="50px" key={e.id} src={e.src} title={e.title} alt=""/>
+      <img className="logo m-2" width="50px" height="50px" key={e.id} src={e.src} title={e.title} alt=""/>
     );
   }
 

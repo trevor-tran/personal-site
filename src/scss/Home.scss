@@ -1,6 +1,7 @@
 @import './standard';
 
 $progressHeight: 5px;
+$scaleRatio: 1.3;
 
 .intro {
   margin-top: 30vh;
@@ -39,6 +40,16 @@ $progressHeight: 5px;
   h2 {
   color: inherit;
   }
+}
+
+.logo:hover {
+  -webkit-transform: translateY($scaleRatio);
+  -moz-transform: translateY($scaleRatio);
+  -ms-transform: translateY($scaleRatio);
+  -o-transform: translateY($scaleRatio);
+  transform: translateY($scaleRatio);
+  transform: scale($scaleRatio);
+  transition: 0.8s;
 }
 
 .progress {
