@@ -21,6 +21,29 @@ function Home() {
     { id: "sql", skill: "SQL", proficency: "60%" },
   ];
 
+  const LOGOS = [
+    {id: "react", title: "React", src: `${process.env.PUBLIC_URL}/logos/react.png`},
+    {id: "bootstrap", title: "Boostrap", src: `${process.env.PUBLIC_URL}/logos/bootstrap.png`},
+    {id: "material-ui", title: "Material-UI", src: `${process.env.PUBLIC_URL}/logos/material-ui.png`},
+    {id: "javascript", title: "Javascript", src: `${process.env.PUBLIC_URL}/logos/javascript.png`},
+    {id: "html", title: "HTML", src: `${process.env.PUBLIC_URL}/logos/html.png`},
+    {id: "css", title: "CSS", src: `${process.env.PUBLIC_URL}/logos/css.png`},
+    {id: "sass", title: "SASS", src: `${process.env.PUBLIC_URL}/logos/sass.png`},
+    {id: "java", title: "Java", src: `${process.env.PUBLIC_URL}/logos/java.png`},
+    {id: "spark", title: "Spark Java", src: `${process.env.PUBLIC_URL}/logos/spark-java.png`},
+    {id: "mysql", title: "MySQL", src: `${process.env.PUBLIC_URL}/logos/mysql.png`},
+    {id: "neo4j", title: "Neo4j", src: `${process.env.PUBLIC_URL}/logos/neo4j.png`},
+    {id: "node", title: "NodeJS", src: `${process.env.PUBLIC_URL}/logos/node.png`},
+    {id: "aws", title: "AWS", src: `${process.env.PUBLIC_URL}/logos/aws.png`},
+    {id: "Serverless", title: "Serverless", src: `${process.env.PUBLIC_URL}/logos/serverless.png`},
+    {id: "jest", title: "Jest", src: `${process.env.PUBLIC_URL}/logos/jest.png`},
+    {id: "socket", title: "Socket.io", src: `${process.env.PUBLIC_URL}/logos/socket-io.png`},
+    {id: "git", title: "Git", src: `${process.env.PUBLIC_URL}/logos/git.png`},
+    {id: "nginx", title: "NGINX", src: `${process.env.PUBLIC_URL}/logos/nginx.png`},
+    {id: "digital-ocean", title: "Digital Ocean", src: `${process.env.PUBLIC_URL}/logos/digital-ocean.png`},
+    {id: "vscode", title: "VS Code", src: `${process.env.PUBLIC_URL}/logos/vscode.png`},
+    {id: "postman", title: "Postman", src: `${process.env.PUBLIC_URL}/logos/postman.png`},
+  ]
 
   // this useEffect() called once after the page mounted
   useEffect(() => {
@@ -66,6 +89,12 @@ function Home() {
     return lst;
   }
 
+  const displayLogos = (logos) => {
+    return logos.map(e =>
+      <img className="m-2" width="50px" height="50px" key={e.id} src={e.src} title={e.title} alt=""/>
+    );
+  }
+
   return (
     <React.Fragment>
       <div className="intro">
@@ -81,6 +110,11 @@ function Home() {
             {isBigScreen ? makeSkillList(SKILLS, 2) : makeSkillList(SKILLS, 1)}
           </tbody>
         </table>
+      </div>
+      <div className="justify-content-center">
+      <h2>Experiences</h2>
+        <div className="d-flex flex-row"></div>
+        {displayLogos(LOGOS)}
       </div>
     </React.Fragment>
   );
