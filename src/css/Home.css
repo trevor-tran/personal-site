@@ -30,10 +30,8 @@
     border-color: #F4F6F7; } }
 
 /* skills area */
-.skills {
-  margin-top: 10rem; }
-  .skills h2 {
-    color: inherit; }
+.skills h2 {
+  color: inherit; }
 
 .progress {
   height: 5px;

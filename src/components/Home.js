@@ -29,6 +29,7 @@ function Home() {
     {id: "html", title: "HTML", src: `${process.env.PUBLIC_URL}/logos/html.png`},
     {id: "css", title: "CSS", src: `${process.env.PUBLIC_URL}/logos/css.png`},
     {id: "sass", title: "SASS", src: `${process.env.PUBLIC_URL}/logos/sass.png`},
+    {id: "npm", title: "npm", src: `${process.env.PUBLIC_URL}/logos/npm.png`},
     {id: "java", title: "Java", src: `${process.env.PUBLIC_URL}/logos/java.png`},
     {id: "spark", title: "Spark Java", src: `${process.env.PUBLIC_URL}/logos/spark-java.png`},
     {id: "mysql", title: "MySQL", src: `${process.env.PUBLIC_URL}/logos/mysql.png`},
@@ -43,6 +44,7 @@ function Home() {
     {id: "digital-ocean", title: "Digital Ocean", src: `${process.env.PUBLIC_URL}/logos/digital-ocean.png`},
     {id: "vscode", title: "VS Code", src: `${process.env.PUBLIC_URL}/logos/vscode.png`},
     {id: "postman", title: "Postman", src: `${process.env.PUBLIC_URL}/logos/postman.png`},
+    {id: "intellij-idea", title: "Intellij IDEA", src: `${process.env.PUBLIC_URL}/logos/intellij-idea.png`},
   ]
 
   // this useEffect() called once after the page mounted
@@ -103,7 +105,7 @@ function Home() {
         <p className="lead">I am a new grad in Computer Science at University of Washington, Seattle, Washington, USA.</p>
         <button type="button" className="btn btn-outline-dark" onClick={handleClick}>View my resume</button>
       </div>
-      <div className="skills">
+      <div className="skills mt-5">
         <h2>Technical skills</h2>
         <table>
           <tbody>
@@ -111,8 +113,8 @@ function Home() {
           </tbody>
         </table>
       </div>
-      <div className="justify-content-center">
-      <h2>Experiences</h2>
+      <div className="justify-content-center mt-5">
+      <h2>Experienced Tools</h2>
         <div className="d-flex flex-row"></div>
         {displayLogos(LOGOS)}
       </div>
