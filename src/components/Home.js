@@ -14,10 +14,10 @@ function Home() {
   }
 
   const SKILLS = [
-    { id: "java", skill: "Java", proficency: "60%" },
-    { id: "javascript", skill: "JavaScript", proficency: "60%" },
+    { id: "java", skill: "Java", proficency: "70%" },
+    { id: "javascript", skill: "JavaScript", proficency: "70%" },
     { id: "reactjs", skill: "ReactJS", proficency: "80%" },
-    { id: "html", skill: "HTML/CSS", proficency: "60%" },
+    { id: "html", skill: "HTML/CSS", proficency: "70%" },
     { id: "sql", skill: "SQL", proficency: "60%" },
   ];
 
@@ -30,6 +30,7 @@ function Home() {
     {id: "css", title: "CSS", src: `${process.env.PUBLIC_URL}/logos/css.png`},
     {id: "sass", title: "SASS", src: `${process.env.PUBLIC_URL}/logos/sass.png`},
     {id: "npm", title: "npm", src: `${process.env.PUBLIC_URL}/logos/npm.png`},
+    {id: "jquery", title: "JQuery", src: `${process.env.PUBLIC_URL}/logos/jquery.png`},
     {id: "java", title: "Java", src: `${process.env.PUBLIC_URL}/logos/java.png`},
     {id: "spark", title: "Spark Java", src: `${process.env.PUBLIC_URL}/logos/spark-java.png`},
     {id: "mysql", title: "MySQL", src: `${process.env.PUBLIC_URL}/logos/mysql.png`},

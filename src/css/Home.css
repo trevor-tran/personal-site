@@ -1,5 +1,5 @@
 .intro {
-  margin-top: 30vh;
+  margin-top: 25vh;
   text-align: left;
   /* The typing effect */
   /* The typewriter cursor effect */ }
@@ -28,6 +28,10 @@
     border-color: transparent; }
   50% {
     border-color: #F4F6F7; } }
+
+@media only screen and (max-width: 1224px) {
+  .intro {
+    margin-top: 15vh; } }
 
 /* skills area */
 .skills h2 {

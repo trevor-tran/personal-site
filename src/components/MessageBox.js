@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import '../css/MessageBox.css';
 import emailjs from 'emailjs-com';
 
