@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import $ from 'jquery';
 import MediaQuery from 'react-responsive';
 
 import '../css/Header.css';
-import {BIG_SCREEN} from '../utils';
+import { BIG_SCREEN } from '../utils';
 
 function Header() {
 
@@ -22,13 +22,16 @@ function Header() {
     }
   ];
 
+  $(document).on('click', () => {
+    $("#sidenav-id").width("0px");
+  })
+
+
   const openSideNav = () => {
-    console.log("opened")
     $("#sidenav-id").width("200px");
   }
 
   const closeSideNav = () => {
-    console.log("opened")
     $("#sidenav-id").width("0px");
   }
 
@@ -42,6 +45,8 @@ function Header() {
       </li>
     );
   }
+
+
 
   return (
     <nav className="navbar navbar-expand navbar-dark fixed-top">
@@ -79,7 +84,7 @@ function Header() {
       {/* icons on the right */}
       <div className="right-container navbar-collapse justify-content-end order-2">
         <ul className="navbar-nav">
-         {makeIcons(LINKS)}
+          {makeIcons(LINKS)}
         </ul>
       </div>
     </nav>
