@@ -6,8 +6,7 @@ function Portfolio() {
     <div className="portfolio">
       <p>I put my deployed projects on this page</p>
       <div className="drawing-tool">
-        <h2><a href="http://www.phuongtran.me/drawing/" target="_blank" rel="noopener noreferrer"><u><b>Simple
-                Drawing Tool</b></u></a></h2>
+        <h2><a href="http://www.phuongtran.me/drawing/" target="_blank" rel="noopener noreferrer"><u><b>Drawing Tool</b></u></a></h2>
         <img className="demo" src={process.env.PUBLIC_URL + "/drawing.png"} alt="" />
         <h4>Use cases:</h4>
         <p>This app that allow users interact on the same drawing canvas in real time.<br /></p>
