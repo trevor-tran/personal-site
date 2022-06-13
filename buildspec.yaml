@@ -1,0 +1,16 @@
+#buildspec.yaml used by AWS CodeBuild
+version: 1.0
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 17.1.0
+
+    commands:
+        # install npm
+        - npm install
+
+  build:
+    commands:
+        # run "build" script in package.json
+        - npm run build
