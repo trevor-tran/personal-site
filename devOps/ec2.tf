@@ -1,20 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
-    }
-  }
-}
-
-# Configure the AWS Provider
-provider "aws" {
-  region                        = "us-west-2"
-  shared_config_files           = ["~/.aws/config"]
-  shared_credentials_files      = ["~/.aws/credentials"]
-  profile                       = "site-dev"
-}
-
 # key pair to control login access to EC2 instances
 resource "tls_private_key" "pk" {
   algorithm = "RSA"
@@ -33,6 +16,8 @@ resource "aws_ssm_parameter" "porfolio_ssm" {
   value       = tls_private_key.pk.private_key_openssh
 }
 
+
+
 # Create EC2
 resource "aws_instance" "porfolio_server" {
   ami                           = "ami-0c2ab3b8efb09f272" # us-west-2
@@ -40,7 +25,6 @@ resource "aws_instance" "porfolio_server" {
   vpc_security_group_ids        = [aws_security_group.porfolio_instance_sg.id]
   key_name                      = aws_key_pair.porfolio_kp.key_name
 }
-
 
 # create security group for EC2
 resource "aws_security_group" "porfolio_instance_sg" {
@@ -63,15 +47,4 @@ resource "aws_security_group" "porfolio_instance_sg" {
     cidr_blocks       = ["0.0.0.0/0"]
     ipv6_cidr_blocks  = ["::/0"]
   }
-}
-
-# outputs
-output "instance_ip_addr" {
-  value = aws_instance.porfolio_server.public_ip
-  description = "The public IP address of the porfolio instance"
-}
-
-output "porfolio_ssm_name" {
-  value = aws_ssm_parameter.porfolio_ssm.name
-  description = "SSM Parameter name for EC2 Instance login private key"
 }
