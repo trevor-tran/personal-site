@@ -30,7 +30,7 @@ resource "aws_ssm_parameter" "porfolio_ssm" {
   name        = "/porfolio/server/ssh"
   description = "The private key for logging in porfolio EC2 instance"
   type        = "SecureString"
-  value       = tls_private_key.pk.private_key_pem
+  value       = tls_private_key.pk.private_key_openssh
 }
 
 # Create EC2
@@ -65,11 +65,13 @@ resource "aws_security_group" "porfolio_instance_sg" {
   }
 }
 
+# outputs
 output "instance_ip_addr" {
   value = aws_instance.porfolio_server.public_ip
   description = "The public IP address of the porfolio instance"
 }
 
-# provisioner "local-exec" {
-#     command = "echo '${tls_private_key.pk.private_key_pem}' > ./myKey.pem"
-#   }
+output "porfolio_ssm_name" {
+  value = aws_ssm_parameter.porfolio_ssm.name
+  description = "SSM Parameter name for EC2 Instance login private key"
+}
