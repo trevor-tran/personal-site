@@ -17,6 +17,9 @@ resource "aws_ssm_parameter" "porfolio_ssm" {
 }
 
 
+resource "aws_eip" "instance_ip" {
+  instance = aws_instance.porfolio_server.id
+}
 
 # Create EC2
 resource "aws_instance" "porfolio_server" {

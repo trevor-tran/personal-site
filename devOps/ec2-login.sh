@@ -4,16 +4,21 @@
 #
 ##########################################################
 
+
 #!/bin/bash
+
+PROFILE=site-dev
+REGION=us-west-2
+USERNAME="ec2-user"
+
 # get output values from terraform
-ip_addr=$(terraform output --raw instance_ip_addr)
-ssm_name=$(terraform output --raw porfolio_ssm_name)
-
-# default username in EC2s
-username="ec2-user"
-
+IP_ADDR=$(terraform output --raw instance_ip_addr)
+SSM_NAME=$(terraform output --raw porfolio_ssm_name)
+echo $SSM_NAME
 # descrypt private key stored in SSM Parameter
-private_key=$(aws --profile=site-dev --region=us-west-2 ssm get-parameter --name /porfolio/server/ssh --with-decryption --output text --query 'Parameter.Value')
+private_key=$(aws --profile=$PROFILE --region=$REGION \
+  ssm get-parameter --name $SSM_NAME --with-decryption \
+  --output text --query 'Parameter.Value')
 
 ssh-add - <<< "${private_key}"
-ssh $username@$ip_addr
+ssh $USERNAME@$IP_ADDR
