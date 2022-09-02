@@ -27,6 +27,7 @@ resource "aws_instance" "porfolio_server" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.porfolio_instance_sg.id]
   key_name               = aws_key_pair.porfolio_kp.key_name
+  user_data = "${file("ec2_user_data.sh")}"
 }
 
 # create security group for EC2
@@ -38,6 +39,15 @@ resource "aws_security_group" "porfolio_instance_sg" {
     description      = "allow ssh"
     from_port        = 22
     to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  ingress {
+    description      = "allow http"
+    from_port        = 80
+    to_port          = 80
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]

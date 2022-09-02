@@ -1,5 +1,5 @@
 output "instance_ip_addr" {
-  value       = aws_instance.porfolio_server.public_ip
+  value       = aws_eip.instance_ip.public_ip
   description = "The public IP address of the porfolio instance"
 }
 
