@@ -4,8 +4,10 @@ resource "aws_codebuild_project" "porfolio_codebuild" {
   service_role = aws_iam_role.codebuild_role.arn
 
   artifacts {
-    type     = "S3"
-    location = aws_s3_bucket.codebuild_artifacts.bucket
+    type      = "S3"
+    location  = aws_s3_bucket.codebuild_artifacts.bucket
+    path      = "/"
+    packaging = "ZIP"
   }
 
   environment {
