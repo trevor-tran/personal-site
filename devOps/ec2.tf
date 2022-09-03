@@ -9,14 +9,6 @@ resource "aws_key_pair" "porfolio_kp" {
   public_key = tls_private_key.pk.public_key_openssh
 }
 
-resource "aws_ssm_parameter" "porfolio_ssm" {
-  name        = "/porfolio/server/ssh"
-  description = "The private key for logging in porfolio EC2 instance"
-  type        = "SecureString"
-  value       = tls_private_key.pk.private_key_openssh
-}
-
-
 resource "aws_eip" "instance_ip" {
   instance = aws_instance.porfolio_server.id
 }
@@ -27,7 +19,7 @@ resource "aws_instance" "porfolio_server" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.porfolio_instance_sg.id]
   key_name               = aws_key_pair.porfolio_kp.key_name
-  user_data = "${file("ec2_user_data.sh")}"
+  user_data              = file("ec2_user_data.sh")
 }
 
 # create security group for EC2
