@@ -1,13 +1,13 @@
 resource "aws_codebuild_project" "porfolio_codebuild" {
-  name         = "porfolio-codebuild"
-  description  = "build porfolio project"
-  service_role = aws_iam_role.codebuild_role.arn
+  name          = "porfolio-codebuild"
+  description   = "build porfolio project"
+  service_role  = aws_iam_role.codebuild_role.arn
+  build_timeout = "15"
 
   artifacts {
-    type      = "S3"
-    location  = aws_s3_bucket.codebuild_artifacts.bucket
-    path      = "/"
-    packaging = "ZIP"
+    type                   = "CODEPIPELINE"
+    override_artifact_name = true
+    encryption_disabled    = true
   }
 
   environment {
@@ -24,36 +24,55 @@ resource "aws_codebuild_project" "porfolio_codebuild" {
   }
 
   source {
-    type      = "GITHUB"
-    location  = "https://github.com/PhuongDTran/personal-site.git"
-    buildspec = "buildspec.yaml"
+    type         = "CODEPIPELINE"
+    buildspec    = "buildspec.yaml"
+    insecure_ssl = false
 
     git_submodules_config {
       fetch_submodules = true
     }
   }
-  source_version = "master"
 }
 
+resource "aws_iam_role" "codebuild_role" {
+  name = "codebuild-role"
 
-resource "aws_codebuild_source_credential" "example" {
-  auth_type   = "PERSONAL_ACCESS_TOKEN"
-  server_type = "GITHUB"
-  token       = data.aws_ssm_parameter.github_token.value
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "codebuild.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
 }
 
-resource "aws_codebuild_webhook" "porfolio_codebuild_webhook" {
-  project_name = aws_codebuild_project.porfolio_codebuild.name
-  build_type   = "BUILD"
-  filter_group {
-    filter {
-      type    = "EVENT"
-      pattern = "PUSH"
+resource "aws_iam_role_policy" "example" {
+  role = aws_iam_role.codebuild_role.name
+
+  policy = <<POLICY
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Resource": [
+        "*"
+      ],
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ]
     }
 
-    filter {
-      type    = "HEAD_REF"
-      pattern = "master"
-    }
-  }
+  ]
+}
+POLICY
 }
