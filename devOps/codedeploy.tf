@@ -13,10 +13,11 @@ resource "aws_codedeploy_deployment_config" "porfolio" {
 }
 
 resource "aws_codedeploy_deployment_group" "porfolio" {
-  app_name               = aws_codedeploy_app.porfolio.name
-  deployment_group_name  = "porfolio-codedeploy-group"
-  service_role_arn       = aws_iam_role.porfolio_codedeploy_role.arn
-  deployment_config_name = "CodeDeployDefault.AllAtOnce"
+  app_name                         = aws_codedeploy_app.porfolio.name
+  deployment_group_name            = "porfolio-codedeploy-group"
+  service_role_arn                 = aws_iam_role.porfolio_codedeploy_role.arn
+  deployment_config_name           = "CodeDeployDefault.AllAtOnce"
+  # ignore_application_stop_failures = true
 
   ec2_tag_filter {
     key   = "target"

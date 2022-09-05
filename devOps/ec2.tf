@@ -79,9 +79,7 @@ resource "aws_iam_role_policy" "porfolio_instance_policy" {
       {
         "Effect" : "Allow",
         "Action" : [
-          "ec2:RunInstances",
-          "ec2:AssociateIamInstanceProfile",
-          "ec2:ReplaceIamInstanceProfileAssociation"
+          "ec2:*"
         ],
         "Resource" : "*"
       },
