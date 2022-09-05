@@ -140,10 +140,10 @@ resource "aws_iam_role_policy" "porfolio_codepipeline_policy" {
   "Version": "2012-10-17",
   "Statement": [
     {
-            "Effect": "Allow",
-            "Action": "codestar-connections:UseConnection",
-            "Resource": "${aws_codestarconnections_connection.porfolio_github_connection.arn}"
-        },
+      "Effect": "Allow",
+      "Action": "codestar-connections:UseConnection",
+      "Resource": "${aws_codestarconnections_connection.porfolio_github_connection.arn}"
+    },
     {
       "Effect":"Allow",
       "Action": [
@@ -163,6 +163,13 @@ resource "aws_iam_role_policy" "porfolio_codepipeline_policy" {
       "Action": [
         "codebuild:BatchGetBuilds",
         "codebuild:StartBuild"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "codedeploy:*"
       ],
       "Resource": "*"
     }

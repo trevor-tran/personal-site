@@ -14,7 +14,7 @@ resource "aws_codedeploy_deployment_config" "porfolio" {
 
 resource "aws_codedeploy_deployment_group" "porfolio" {
   app_name               = aws_codedeploy_app.porfolio.name
-  deployment_group_name  = "profolio-codedeploy-group"
+  deployment_group_name  = "porfolio-codedeploy-group"
   service_role_arn       = aws_iam_role.porfolio_codedeploy_role.arn
   deployment_config_name = aws_codedeploy_deployment_config.porfolio.id
 
@@ -41,8 +41,14 @@ resource "aws_codedeploy_deployment_group" "porfolio" {
   # }
 }
 
+resource "aws_iam_role_policy_attachment" "AWSCodeDeployRole" {
+  role = aws_iam_role.porfolio_codedeploy_role.name
+  # policy_arn = aws_iam_policy.porfolio_codedeploy_policy.arn
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole"
+}
+
 resource "aws_iam_role" "porfolio_codedeploy_role" {
-  name = "example-role"
+  name = "porfolio-codedeploy-role"
 
   assume_role_policy = <<EOF
 {
@@ -59,4 +65,23 @@ resource "aws_iam_role" "porfolio_codedeploy_role" {
   ]
 }
 EOF
+}
+
+resource "aws_iam_policy" "porfolio_codedeploy_policy" {
+  name   = "porfolio-codedeploy-policy"
+  policy = data.aws_iam_policy_document.allow_access_to_porfolio_codedeploy.json
+}
+
+data "aws_iam_policy_document" "allow_access_to_porfolio_codedeploy" {
+  statement {
+
+
+    actions = [
+      "codedeploy:*"
+    ]
+
+    resources = [
+      aws_codedeploy_deployment_group.porfolio.arn
+    ]
+  }
 }
