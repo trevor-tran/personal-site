@@ -16,19 +16,13 @@ resource "aws_codedeploy_deployment_group" "porfolio" {
   app_name               = aws_codedeploy_app.porfolio.name
   deployment_group_name  = "porfolio-codedeploy-group"
   service_role_arn       = aws_iam_role.porfolio_codedeploy_role.arn
-  deployment_config_name = aws_codedeploy_deployment_config.porfolio.id
+  deployment_config_name = "CodeDeployDefault.AllAtOnce"
 
   ec2_tag_filter {
     key   = "target"
     type  = "KEY_AND_VALUE"
     value = "porfolio-server"
   }
-
-  # trigger_configuration {
-  #   trigger_events     = ["DeploymentFailure"]
-  #   trigger_name       = "foo-trigger"
-  #   trigger_target_arn = "foo-topic-arn"
-  # }
 
   auto_rollback_configuration {
     enabled = true

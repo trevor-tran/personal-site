@@ -4,7 +4,7 @@ output "instance_ip_addr" {
 }
 
 output "instance_id" {
-  value       = aws_instance.porfolio_server.id
+  value       = aws_instance.porfolio_instance.id
   description = "Instance ID"
 }
 
