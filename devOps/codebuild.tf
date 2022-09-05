@@ -1,7 +1,7 @@
 resource "aws_codebuild_project" "porfolio_codebuild" {
   name          = "porfolio-codebuild"
   description   = "build porfolio project"
-  service_role  = aws_iam_role.codebuild_role.arn
+  service_role  = aws_iam_role.porfolio_codebuild_role.arn
   build_timeout = "15"
 
   artifacts {
@@ -34,7 +34,7 @@ resource "aws_codebuild_project" "porfolio_codebuild" {
   }
 }
 
-resource "aws_iam_role" "codebuild_role" {
+resource "aws_iam_role" "porfolio_codebuild_role" {
   name = "codebuild-role"
 
   assume_role_policy = <<EOF
@@ -53,8 +53,8 @@ resource "aws_iam_role" "codebuild_role" {
 EOF
 }
 
-resource "aws_iam_role_policy" "example" {
-  role = aws_iam_role.codebuild_role.name
+resource "aws_iam_role_policy" "porfolio_codebuild_policy" {
+  role = aws_iam_role.porfolio_codebuild_role.name
 
   policy = <<POLICY
 {

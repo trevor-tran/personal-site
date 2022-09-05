@@ -20,6 +20,10 @@ resource "aws_instance" "porfolio_server" {
   vpc_security_group_ids = [aws_security_group.porfolio_instance_sg.id]
   key_name               = aws_key_pair.porfolio_kp.key_name
   user_data              = file("ec2_user_data.sh")
+
+  tags = {
+    target = "porfolio-server"
+  }
 }
 
 # create security group for EC2

@@ -39,31 +39,33 @@ resource "aws_codepipeline" "porfolio_codepipeline" {
       version          = "1"
 
       configuration = {
-        ProjectName = "porfolio-codebuild"
+        ProjectName = "${aws_codebuild_project.porfolio_codebuild.name}"
       }
     }
   }
 
-  # stage {
-  #   name = "Deploy"
+  stage {
+    name = "Deploy"
 
-  #   action {
-  #     name            = "Deploy"
-  #     category        = "Deploy"
-  #     owner           = "AWS"
-  #     provider        = "CloudFormation"
-  #     input_artifacts = ["build_output"]
-  #     version         = "1"
+    action {
+      name            = "Deploy"
+      category        = "Deploy"
+      owner           = "AWS"
+      provider        = "CodeDeploy"
+      input_artifacts = ["build_output"]
+      version         = "1"
 
-  #     configuration = {
-  #       ActionMode     = "REPLACE_ON_FAILURE"
-  #       Capabilities   = "CAPABILITY_AUTO_EXPAND,CAPABILITY_IAM"
-  #       OutputFileName = "CreateStackOutput.json"
-  #       StackName      = "MyStack"
-  #       TemplatePath   = "build_output::sam-templated.yaml"
-  #     }
-  #   }
-  # }
+      configuration = {
+        ApplicationName     = "${aws_codedeploy_app.porfolio.name}"
+        DeploymentGroupName = "${aws_codedeploy_deployment_group.porfolio.deployment_group_name}"
+        # ActionMode     = "REPLACE_ON_FAILURE"
+        # Capabilities   = "CAPABILITY_AUTO_EXPAND,CAPABILITY_IAM"
+        # OutputFileName = "CreateStackOutput.json"
+        # StackName      = "MyStack"
+        # TemplatePath   = "build_output::sam-templated.yaml"
+      }
+    }
+  }
 }
 
 resource "aws_codestarconnections_connection" "porfolio_github_connection" {
